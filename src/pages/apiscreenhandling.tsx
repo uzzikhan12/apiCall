@@ -42,6 +42,19 @@ export default function APIScreen() {
                         key:'website',
                         label:'Website'
                     },
+
+                    {
+                        key:"",
+                        label:"Delete",
+                        displayFeild:(row:any)=>
+                        <Button onClick={()=>{
+                            usersList.splice(row,1);
+                            setUsersList([...usersList]);
+                            }}
+                            variant="contained">
+                            Delete
+                        </Button>
+                    }
                  ]}
                  datasource={usersList} />
                 <div className="text-center mt-2">
